@@ -1,13 +1,23 @@
 body {
-  font-family: Arial;
-  background-color: #333; /* dark grey background */
+  background-color: #333; /* added grey background color to the whole page */
 }
-
+.heading {
+  color: rgb(240, 186, 9);
+  font-size: 124px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0; /* Added to remove the margin between the heading and the search bar */
+}
 .todo-grid, .todo-input-grid {
   display: grid;
   grid-template-columns: 1fr; /* changed to single column for portrait mode */
   gap: 10px; /* combined column-gap and row-gap into a single property */
   align-items: center;
+  background-color: #333; /* added dark grey background color */
+  color: #fff; /* set text color to white */
+  font-weight: bold; /* make all text bold */
 }
 
 .todo-input-grid {
@@ -18,24 +28,49 @@ body {
 .name-input, .due-date-input {
   font-size: 15px;
   padding: 6px;
-}
+  height: 30px; /* added height to make input fields thinner */
+  background-color: transparent; /* make search bar transparent */
+  border: 2px solid rgb(240, 186, 9); /* thicken the orange border to 24px */
+  border-radius: 20px; /* add rounded corners to the search bar */
+  color: #fff; /* set text color to white */
+ }
 
 .add-todo-button {
   background-color: green;
-  color: white;
+  color: #fff; /* set text color to white */
   border: none;
   font-size: 15px;
   cursor: pointer;
   width: 100%; /* make the button full-width */
+  height: 30px; /* added height to make button thinner */
+  border-radius: 15px; /* make the button rounded */
+  font-weight: bold; /* make button text bold */
 }
 
 .delete-todo-button {
-  background-color: darkred;
-  color: white;
+  background-color: rgb(250, 14, 14);
+  color: #fff; /* set text color to white */
   font-size: 15px;
   border: none;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 6px; /* reduced padding to make button thinner */
   cursor: pointer;
-  width: 100%; /* make the button full-width */
+  width: 64px; /* set width to 64px */
+  height: 30px; /* added height to make button thinner */
+  border-radius: 15px; /* make the delete button rounded */
+  font-weight: bold; /* make button text bold */
+}
+
+.todo-grid {
+  grid-template-columns: 1fr auto; /* added second column for delete button */
+  display: flex; /* make todo grid a flex container */
+  align-items: center; /* center items vertically */
+}
+
+.todo-item {
+  display: flex; /* make todo item a flex container */
+  align-items: center; /* center items vertically */
+}
+
+.delete-todo-button {
+  margin-left: 10px; /* add margin to separate delete button from todo item */
 }
